@@ -6,10 +6,7 @@ def safe_print_list(my_list=[], x=0):
             print(my_list[n], end="")
             count += 1
         print("")
-        return count
-    except TypeError:
+    except (TypeError, IndexError):
         print("")
-        return count
-    except IndexError:
-        print("")
-        return count
+        pass
+    return count
