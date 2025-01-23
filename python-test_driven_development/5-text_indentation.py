@@ -15,7 +15,8 @@ def text_indentation(text):
     if type(text) is not str:
         raise TypeError("text must be a string")
     if not text:
-        raise TypeError("text must be a string")
+        raise TypeError("text_indentation() missing 1 required \
+                positional argument: 'text'")
     i = 0
     new_text = text.replace(". ", ".")
     new_text = new_text.replace("? ", "?")

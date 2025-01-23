@@ -55,4 +55,9 @@ Traceback (most recent call last):
   File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-test_driven_development/5-text_indentation.py", line 4, in text_indentation
     raise TypeError("text must be a string")
 TypeError: text must be a string
+>>> text_indentation()
+Traceback (most recent call last):
+  File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-test_driven_development/./5-text_indentation.py", line 30, in <module>
+    text_indentation()
+TypeError: text_indentation() missing 1 required positional argument: 'text'
 >>>
