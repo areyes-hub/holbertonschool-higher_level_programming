@@ -24,4 +24,11 @@ Traceback (most recent call last):
   File "/mnt/c/Users/Angel Reyes/Documents/py_programming/practice/test.py", line 4, in say_my_name
     raise TypeError("first_name must be a string")
 TypeError: first_name must be a string
+>>> say_my_name("Angel", 48)
+Traceback (most recent call last):
+  File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-test_driven_development/3-say_my_name.py", line 21, in <module>
+    say_my_name("Angel", 48)
+  File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-test_driven_development/3-say_my_name.py", line 18, in say_my_name
+    raise TypeError("last_name must be a string")
+TypeError: last_name must be a string
 >>> 
