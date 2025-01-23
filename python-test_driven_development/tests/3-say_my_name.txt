@@ -31,4 +31,9 @@ Traceback (most recent call last):
   File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-test_driven_development/3-say_my_name.py", line 18, in say_my_name
     raise TypeError("last_name must be a string")
 TypeError: last_name must be a string
+>>> say_my_name()
+Traceback (most recent call last):
+  File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-test_driven_development/3-say_my_name.py", line 23, in <module>
+    say_my_name()
+TypeError: missing 1 required argument: first_name
 >>> 
