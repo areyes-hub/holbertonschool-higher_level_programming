@@ -14,6 +14,8 @@ def text_indentation(text):
     """ Print two new lines after . : or ? """
     if type(text) is not str:
         raise TypeError("text must be a string")
+    if not text:
+        raise TypeError("text must be a string")
     i = 0
     new_text = text.replace(". ", ".")
     new_text = new_text.replace("? ", "?")
