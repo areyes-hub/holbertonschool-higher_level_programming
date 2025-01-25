@@ -8,6 +8,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_normal_case(self):
         arr = [1, 2, 3, 6, 5, 9, 4]
         self.assertEqual(max_integer(arr), 9)
+    def test_max_at_the_end(self):
+        arr = [2, 4, 6, 8, 10, 12]
+        self.assertEqual(max_integer(arr), 12)
     def test_negative_number(self):
         arr = [-1, -2, -3, -4, -5, -6]
         self.assertEqual(max_integer(arr), -1)
