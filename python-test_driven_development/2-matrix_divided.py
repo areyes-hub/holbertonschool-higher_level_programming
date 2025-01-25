@@ -30,7 +30,7 @@ def matrix_divided(matrix, div):
             if not isinstance(element, (int, float)):
                 raise TypeError(
                     "matrix must be a matrix (list of lists) of \
-                            integers/floats")
+                        integers/floats")
             new_row.append(round(element / div, 2))
         new_matrix.append(new_row)
     return new_matrix
