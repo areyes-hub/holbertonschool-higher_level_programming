@@ -20,6 +20,9 @@ class TestMaxInteger(unittest.TestCase):
     def test_mixed_numbers(self):
         arr = [-1, -3, 6, -12, -76, 2]
         self.assertEqual(max_integer(arr), 6)
+    def test_type_error(self):
+        self.assertRaises(TypeError, max_integer, ["h", 1])
+        self.assertRaises(TypeError, max_integer, [2, [2, 1]])
 
-if __name__ == "__main__":
-    unittest.main()
+# if __name__ == "__main__":
+#     unittest.main()
