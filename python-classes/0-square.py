@@ -11,5 +11,4 @@ class Square:
     """This is an empty class
     defined without attributes
     """
-    def __init__(self):
-        pass
+    pass
