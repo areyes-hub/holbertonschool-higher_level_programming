@@ -1,0 +1,57 @@
+The ``my_list`` module
+======================
+
+Using ``my_list``
+----------------------
+
+Write a class MyList that inherits from list:
+
+Public instance method: def print_sorted(self): that prints the list, but sorted (ascending sort)
+You can assume that all the elements of the list will be of type int
+
+>>> MyList = __import__('1-my_list').MyList
+>>> my_list = MyList()
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list = MyList()
+>>> my_list.append("a")
+>>> my_list.append(4)
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(5)
+>>> print(my_list)
+['a', 4, 3, 1, 5]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-inheritance/1-my_list.py", line 24, in <module>
+    my_list.print_sorted()
+  File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-inheritance/1-my_list.py", line 15, in print_sorted
+    print(sorted(self))
+TypeError: '<' not supported between instances of 'int' and 'str'
+>>> my_list = MyList()
+>>> my_list.append(2.5)
+>>> my_list.append(4)
+>>> my_list.append(3)
+>>> my_list.append(1)
+>>> my_list.append(5)
+>>> print(my_list)
+[2.5, 4, 3, 1, 5]
+>>> my_list.print_sorted()
+[1, 2.5, 3, 4, 5]
+>>> my_list = MyList()
+>>> my_list.append()
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/doctest.py", line 1350, in __run
+    exec(compile(example.source, filename, "single",
+  File "<doctest 1-my_list.txt[27]>", line 1, in <module>
+    my_list.append()
+TypeError: list.append() takes exactly one argument (0 given)
