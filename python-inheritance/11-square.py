@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 Rectangle = __import__('9-rectangle').Rectangle
 """
-class Rectangle that inherits from BaseGeometry (9-rectangle.py)
+module with class Square
 """
 
 
@@ -16,8 +16,8 @@ description: [Square] <width>/<height>
     """
     def __init__(self, size):
         """validate size input"""
+        super().__init__(size, size)
         self.integer_validator("size", size)
-
         """Assign the values"""
         self.__size = size
 
@@ -27,4 +27,4 @@ description: [Square] <width>/<height>
 
     """Implement str method"""
     def __str__(self):
-        return f"[{Square.__qualname__}] {self.__size}/{self.__size}"
+        return "[Square] {}/{}".format(self.__size, self.__size)

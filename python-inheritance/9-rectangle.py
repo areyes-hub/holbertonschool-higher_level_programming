@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 """
-class Rectangle that inherits from BaseGeometry (7-base_geometry.py)
+module with class Rectangle
 """
 
 
@@ -29,4 +29,4 @@ description: [Rectangle] <width>/<height>
 
     """Implement str method"""
     def __str__(self):
-        return f"[{Rectangle.__qualname__}] {self.__width}/{self.__height}"
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
