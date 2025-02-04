@@ -17,16 +17,12 @@ print() should print, and str() should return, the square
 description: [Square] <width>/<height>
     """
     def __init__(self, size):
-        """validate size input"""
         super().__init__(size, size)
         self.integer_validator("size", size)
-        """Assign the values"""
         self.__size = size
 
-    """Calculate the area"""
     def area(self):
         return self.__size * self.__size
 
-    """Implement str method"""
     def __str__(self):
         return "[Square] {}/{}".format(self.__size, self.__size)
