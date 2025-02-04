@@ -17,18 +17,13 @@ print() should print, and str() should return, the following rectangle
 description: [Rectangle] <width>/<height>
     """
     def __init__(self, width, height):
-        """validate width and height input"""
         self.integer_validator("width", width)
         self.integer_validator("height", height)
-
-        """Assign the values"""
         self.__width = width
         self.__height = height
 
-    """Calculate the area"""
     def area(self):
         return self.__width * self.__height
 
-    """Implement str method"""
     def __str__(self):
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
