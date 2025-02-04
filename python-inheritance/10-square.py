@@ -21,4 +21,4 @@ the area() method must be implemented
 
     """Calculate the area"""
     def area(self):
-        return self.__size * self.__size
+        return self.__size ** 2
