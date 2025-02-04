@@ -7,10 +7,12 @@ class Rectangle that inherits from BaseGeometry (9-rectangle.py)
 
 class Square(Rectangle):
     """
-Instantiation with size: def __init__(self, size):
+Instantiation with size: def __init__(self, size)::
 size must be private. No getter or setter
 size must be a positive integer, validated by integer_validator
 the area() method must be implemented
+print() should print, and str() should return, the square
+description: [Square] <width>/<height>
     """
     def __init__(self, size):
         """validate size input"""
@@ -25,4 +27,4 @@ the area() method must be implemented
     
     """Implement str method"""
     def __str__(self):
-        return f"[{Rectangle.__qualname__}] {self.__size}/{self.__size}"
+        return f"[{Square.__qualname__}] {self.__size}/{self.__size}"
