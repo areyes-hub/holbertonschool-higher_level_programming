@@ -30,14 +30,4 @@ Traceback (most recent call last):
   File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 18, in integer_validator
     raise TypeError(f"{name} must be an integer")
 TypeError: my_int must be an integer
->>> bg.integer_validator("my_int")
-Traceback (most recent call last):
-  File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 24, in <module>
-    bg.integer_validator("my_int")
-TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
->>> bg.integer_validator()
-Traceback (most recent call last):
-  File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 24, in <module>
-    bg.integer_validator()
-TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 >>> 
