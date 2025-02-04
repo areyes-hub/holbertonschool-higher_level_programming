@@ -26,7 +26,7 @@ description: [Rectangle] <width>/<height>
     """Calculate the area"""
     def area(self):
         return self.__width * self.__height
-    
+
     """Implement str method"""
     def __str__(self):
         return f"[{Rectangle.__qualname__}] {self.__width}/{self.__height}"

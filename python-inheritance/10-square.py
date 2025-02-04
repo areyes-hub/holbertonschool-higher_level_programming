@@ -22,7 +22,7 @@ the area() method must be implemented
     """Calculate the area"""
     def area(self):
         return self.__size * self.__size
-    
+
     """Implement str method"""
     def __str__(self):
         return f"[{Rectangle.__qualname__}] {self.__size}/{self.__size}"

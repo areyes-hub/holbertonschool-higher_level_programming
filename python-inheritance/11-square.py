@@ -24,7 +24,7 @@ description: [Square] <width>/<height>
     """Calculate the area"""
     def area(self):
         return self.__size * self.__size
-    
+
     """Implement str method"""
     def __str__(self):
         return f"[{Square.__qualname__}] {self.__size}/{self.__size}"
