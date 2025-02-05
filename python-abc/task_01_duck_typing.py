@@ -29,7 +29,7 @@ class Circle(Shape):
 
     def perimeter(self):
         if self.radius < 0:
-            raise ValueError("radius must be >= 0")
+            pass
         return self.radius * 2 * pi
 
 
