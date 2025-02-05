@@ -34,6 +34,11 @@ Numbers:
    Traceback (most recent call last):
    ValueError: invalid literal for int() with base 10: 'inf'
 
+:: with 0
+   >>> bg.integer_validator("age", 0)
+   Traceback (most recent call last):
+   ValueError: age must be greater than 0
+
 ''area()'' raises an Exception "area() is not implemented"
 :: empty call
    >>> print(bg.area())
