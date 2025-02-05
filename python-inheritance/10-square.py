@@ -15,8 +15,8 @@ size must be a positive integer, validated by integer_validator
 the area() method must be implemented
     """
     def __init__(self, size):
-        super().__init__(size, size)
         self.integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
 
     def area(self):
