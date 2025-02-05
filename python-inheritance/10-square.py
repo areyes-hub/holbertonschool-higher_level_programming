@@ -17,8 +17,8 @@ the area() method must be implemented
     def __init__(self, size):
         super().__init__(size, size)
         self.integer_validator("size", size)
-        self.integer_validator("size", size)
-        self.__size = size
+        self.__width = size
+        self.__height = size
 
     def area(self):
-        return self.__size ** 2
+        return self.__width * self.__height
