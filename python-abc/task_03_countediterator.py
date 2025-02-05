@@ -6,7 +6,7 @@ CountedIterator module
 """
 
 
-class CountedIterator(object):
+class CountedIterator:
     """Extends iter cass"""
     def __init__(self, some_iterable):
         self.iterator = iter(some_iterable)
