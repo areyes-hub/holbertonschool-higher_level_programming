@@ -7,16 +7,17 @@ CountedIterator module
 
 
 class CountedIterator:
-    """Extends iter cass"""
+    """Extends iter method"""
     def __init__(self, some_iterable):
         self.iterator = iter(some_iterable)
         self.counter = 0
 
+    """fetches counter value"""
     def get_count(self):
         return self.counter
 
+    """Overrides __next__ method"""
     def __next__(self):
         self.counter += 1
-        if not next(self.iterator):
-            raise StopIteration
+        next(self.iterator)
         return self.counter
