@@ -18,6 +18,6 @@ class CountedIterator:
 
     """Overrides __next__ method"""
     def __next__(self):
-        next(self.iterator)
+        item = next(self.iterator)
         self.counter += 1
-        return self.counter
+        return item
