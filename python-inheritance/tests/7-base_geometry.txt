@@ -49,6 +49,26 @@ Numbers:
    Traceback (most recent call last):
    TypeError: age must be an integer
 
+:: with single element list
+   >>> bg.integer_validator("age", [3])
+   Traceback (most recent call last):
+   TypeError: age must be an integer
+
+:: with set
+   >>> bg.integer_validator("age", {3, 4})
+   Traceback (most recent call last):
+   TypeError: age must be an integer
+
+:: with Boolean value
+   >>> bg.integer_validator("age", True)
+   Traceback (most recent call last):
+   TypeError: age must be an integer
+
+:: with None
+   >>> bg.integer_validator("age", None)
+   Traceback (most recent call last):
+   TypeError: age must be an integer
+
 ''area()'' raises an Exception "area() is not implemented"
 :: empty call
    >>> print(bg.area())
