@@ -3,8 +3,11 @@ The ``base_geometry`` module
 Using ``my_list``
 ----------------------
 
-This library is very simple, since it only has one function called
- ''integer_validator()''.
+Public instance method: def area(self): that raises an Exception with the message area() is not implemented
+Public instance method: def integer_validator(self, name, value): that validates value:
+you can assume name is always a string
+if value is not an integer: raise a TypeError exception, with the message <name> must be an integer
+if value is less or equal to 0: raise a ValueError exception with the message <name> must be greater than 0
 
 Numbers:
 ========
@@ -30,3 +33,12 @@ Numbers:
    >>> bg.integer_validator("infnumber", int('inf'))
    Traceback (most recent call last):
    ValueError: invalid literal for int() with base 10: 'inf'
+''area()'' returns the area of the shape.
+:: with no arguments
+   >>> bg.area()
+   Traceback (most recent call last):
+   File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 31, in <module>
+   print(bg.area())
+   File "/mnt/c/Users/Angel Reyes/holberton/holbertonschool-higher_level_programming/python-inheritance/7-base_geometry.py", line 22, in area
+   raise Exception("area() is not implemented")
+   Exception: area() is not implemented
