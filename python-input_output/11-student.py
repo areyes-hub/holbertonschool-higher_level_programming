@@ -11,7 +11,7 @@ class Student:
     attributes: first_name, last_name, age and a
     public instance method: to_json(self, attrs=None)
     """
-    
+
     def __init__(self, first_name, last_name, age):
         self.first_name = first_name
         self.last_name = last_name
