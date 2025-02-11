@@ -13,6 +13,7 @@ def binomial_coeff(a, b):
         return 1
     return binomial_coeff(a - 1, b - 1) + binomial_coeff(a - 1, b)
 
+
 def pascal_triangle(n):
     """
     returns a list of lists of integers
