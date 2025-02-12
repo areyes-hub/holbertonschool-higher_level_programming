@@ -30,4 +30,8 @@ class Student:
 
     def reload_from_json(self, json):
         self.__dict__ = json
-        return self.__dict__
+
+    def __str__(self):
+        return f"age => {self.age} / <class 'int'>\nfirst_name =>\
+        {self.first_name} / <class 'str'>\nlast_name => {self.last_name}\
+        / <class 'str'>"
