@@ -12,7 +12,7 @@ class Student:
     public instance method: to_json(self, attrs=None)
     """
 
-    def __init__(self, first_name, last_name, age):
+    def __init__(self, first_name="J", last_name="S", age=1):
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
