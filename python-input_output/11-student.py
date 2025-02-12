@@ -20,18 +20,16 @@ class Student:
     def to_json(self, attrs=None):
         if attrs:
             new_dict = dict()
-            for i in range(len(attrs)):
-                if attrs[i] not in self.__dict__:
-                    continue
-                new_dict[attrs[i]] = self.__dict__[attrs[i]]
+            for i in attrs:
+                if i in self.__dict__:
+                    new_dict[i] = self.__dict__[i]
             return new_dict
         else:
-            return self.__dict__
+            return {
+                "last_name": self.last_name,
+                "first_name": self.first_name,
+                "age": self.age
+            }
 
     def reload_from_json(self, json):
         self.__dict__ = json
-
-    def __str__(self):
-        return f"age => {self.age} / <class 'int'>\nfirst_name =>\
-        {self.first_name} / <class 'str'>\nlast_name => {self.last_name}\
-        / <class 'str'>"
