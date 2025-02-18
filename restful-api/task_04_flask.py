@@ -15,7 +15,9 @@ def define_username(dic):
         break
 
 
-user = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}}
+user = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}, 
+        "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
+}
 define_username(user)
 
 
