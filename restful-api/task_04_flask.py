@@ -23,13 +23,16 @@ define_username(user)
 def home():
     return "Welcome to the Flask API!"
 
+
 @app.route("/data")
 def data():
     return jsonify(user)
 
+
 @app.route("/status")
 def status():
     return "OK"
+
 
 @app.route("/users")
 def users():
@@ -38,22 +41,24 @@ def users():
         names.append(u)
     return names
 
+
 @app.route("/users/<username>")
 def usernames(username):
     if username not in user:
         return '{"error": "User not found"}'
     return user[username]
 
+
 @app.route("/add_user", methods=["POST"])
 def add_user():
     data = request.get_json()
     if not all(key in data for key in ["username", "name", "age", "city"]):
         return jsonify({"error": "Missing required fields"}), 400
-    
+
     username = data["username"]
     if username in user:
         return jsonify({"error": "User already exists"}), 400
-    
+
     user[username] = {
         "name": data["name"],
         "age": data["age"],
