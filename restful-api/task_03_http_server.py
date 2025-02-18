@@ -4,6 +4,7 @@ API module
 """
 import http.server
 import socketserver
+import json
 
 
 class Server(http.server.BaseHTTPRequestHandler):
@@ -13,20 +14,18 @@ class Server(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            self.wfile.write(bytes(
-                '{"name": "John", "age": 30, "city": "New York"}', "utf-8"
-                ))
+            data = {"name": "John", "age": 30, "city": "New York"}
+            self.wfile.write(bytes(json.dumps(data), "utf-8"))
         elif self.path.endswith("/info"):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            self.wfile.write(bytes(
-            '{"version": "1.0", "description": "A simple API built with \
-http.server"}', "utf-8"
-                ))
+            info = {"version": "1.0", "description": "A simple \
+API built with http.server"}
+            self.wfile.write(bytes(json.dumps(info), "utf-8"))
         elif self.path.endswith("/"):
             self.send_response(200)
-            self.send_header("Content-type", "html")
+            self.send_header("Content-type", "text/html")
             self.end_headers()
             self.wfile.write(bytes(
                 "<html><head><title></title><body><p>Hello, this is a \
@@ -41,8 +40,10 @@ http.server"}', "utf-8"
                     "utf-8"
                 ))
 
-    def serve_forever(port):
-        socketserver.TCPServer(("", port), Server).serve_forever()
+def run_server(port):
+    with socketserver.TCPServer(("", port), Server) as httpd:
+        print(f"Serving on port {port}")
+        httpd.serve_forever()
 
 if __name__ == "__main__":
-    Server.serve_forever(8000)
+    run_server(8000)
