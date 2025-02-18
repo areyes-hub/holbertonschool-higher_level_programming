@@ -27,11 +27,10 @@ API built with http.server"}
             self.wfile.write(json.dumps(info).encode("utf-8"))
         elif self.path == "/":
             self.send_response(200, "OK")
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(
-                "<html><body><p>Hello, this is a \
-                    simple API!</p></body></html>".encode("utf-8")
+                "Hello, this is a simple API!".encode("utf-8")
                 )
         elif self.path == "/status":
             self.send_response(200, "OK")
@@ -40,12 +39,9 @@ API built with http.server"}
             self.wfile.write("OK".encode("utf-8"))
         else:
             self.send_response(404, "Not Found")
-            self.send_header("Content-type", "text/html")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(
-                "<html><body><p>Endpoint not found</p></body></html>".
-                encode("utf-8")
-                )
+            self.wfile.write("Endpoint not found".encode("utf-8"))
 
 
 def run_server(port):
