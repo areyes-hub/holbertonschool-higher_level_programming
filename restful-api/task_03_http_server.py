@@ -10,7 +10,7 @@ import json
 class Server(http.server.BaseHTTPRequestHandler):
     """simple server"""
     def do_GET(self):
-        if  self.path == "/data":
+        if self.path == "/data":
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
@@ -36,14 +36,16 @@ API built with http.server"}
             self.send_header("Content-type", "text/html")
             self.end_headers()
             self.wfile.write(
-                "<html><body><p>Endpoint not found</p></body></html>". \
-                    encode("utf-8")
+                "<html><body><p>Endpoint not found</p></body></html>".
+                encode("utf-8")
                 )
+
 
 def run_server(port):
     with socketserver.TCPServer(("", port), Server) as httpd:
         print(f"Serving on port {port}")
         httpd.serve_forever()
+
 
 if __name__ == "__main__":
     run_server(8000)
