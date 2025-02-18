@@ -49,7 +49,7 @@ def add_user():
 
     username = data["username"]
     if username in user:
-        return jsonify({"error": "Duplicate username"}), 409
+        return jsonify({"error": "Duplicate username"}), 400
 
     user[username] = {
         "username": username,
