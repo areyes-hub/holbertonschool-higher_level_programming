@@ -9,7 +9,7 @@ from flask import request
 app = Flask(__name__)
 
 
-users = {}
+user = {}
 
 
 @app.route("/")
@@ -19,7 +19,7 @@ def home():
 
 @app.route("/data")
 def data():
-    return jsonify(list(users.keys()))
+    return jsonify(list(user.keys()))
 
 
 @app.route("/status")
@@ -29,14 +29,14 @@ def status():
 
 @app.route("/users")
 def users():
-    return jsonify(list(users.keys()))
+    return jsonify(list(user.keys()))
 
 
 @app.route("/users/<username>")
 def usernames(username):
-    if username not in users:
+    if username not in user:
         return jsonify({"error": "User not found"}), 404
-    return jsonify(users[username])
+    return jsonify(user[username])
 
 
 @app.route("/add_user", methods=["POST"])
@@ -48,16 +48,16 @@ def add_user():
         return jsonify({"error": "Missing required fields"}), 400
 
     username = data["username"]
-    if username in users:
+    if username in user:
         return jsonify({"error": "User already exists"}), 400
 
-    users[username] = {
+    user[username] = {
         "username": username,
         "name": data["name"],
         "age": data["age"],
         "city": data["city"]
     }
-    return jsonify({"message": "User added", "user": users[username]}), 201
+    return jsonify({"message": "User added", "user": user[username]}), 201
 
 
 if __name__ == "__main__":
