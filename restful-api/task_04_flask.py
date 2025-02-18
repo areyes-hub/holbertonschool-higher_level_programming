@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 def define_username(dic):
-    for n, v in user.items():
+    for n, v in dic.items():
         v["username"] = n
         break
 
