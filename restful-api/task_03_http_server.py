@@ -33,6 +33,11 @@ API built with http.server"}
                 "<html><body><p>Hello, this is a \
                     simple API!</p></body></html>".encode("utf-8")
                 )
+        elif self.path == "/status":
+            self.send_response(200, "OK")
+            self.send_header("Content-type", "text/html")
+            self.end_headers()
+            return "OK"
         else:
             self.send_response(404, "Not Found")
             self.send_header("Content-type", "text/html")
