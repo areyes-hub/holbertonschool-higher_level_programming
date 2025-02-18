@@ -48,8 +48,8 @@ def add_user():
         return jsonify({"error": "Missing required fields"}), 400
 
     username = data["username"]
-    if username in user:
-        return jsonify({"error": "Duplicate username"}), 400
+    if username in user or not username:
+        return jsonify({"error": "Bad Request"}), 400
 
     user[username] = {
         "username": username,
