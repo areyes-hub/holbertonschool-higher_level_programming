@@ -37,8 +37,7 @@ API built with http.server"}
             self.send_response(200, "OK")
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            status = {"status":"OK"}
-            self.wfile.write(json.dumps(status).encode("utf-8"))
+            self.wfile.write("OK".encode("utf-8"))
         else:
             self.send_response(404, "Not Found")
             self.send_header("Content-type", "text/html")
