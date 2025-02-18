@@ -6,28 +6,31 @@ import requests
 import csv
 
 
-response = requests.get("https://jsonplaceholder.typicode.com/posts")
-code = response.status_code
-
-
 def fetch_and_print_posts():
     """fetches and prints all posts from JSONPlaceholder"""
-    post_dict = response.json()
-    print(f"Status Code: {code}")
-    if code > 199 and code < 300:
-        for t in post_dict:
-            print(t["title"])
+    response = requests.get("https://jsonplaceholder.typicode.com/posts")
+    if response.status_code == 200:
+        post_dict = response.json()
+        print(f"Status code: {response.status_code}")
+        for post in post_dict:
+            print(post["title"])
+    else:
+        print(f"Failed to fetch posts, Status code: {response.status_code}")
 
 
 def fetch_and_save_posts():
     """saves posts as in a csv file"""
-    post_dict = response.json()
-    if code > 199 and code < 300:
-        dict_list = [d for d in post_dict]
+    response = requests.get("https://jsonplaceholder.typicode.com/posts")
+    if response.status_code == 200:
+        post_dict = response.json()
+        dict_list = [
+            {"id": post["id"], "title": post["title"], "body": post["body"]} 
+            for post in post_dict
+            ]
         with open("posts.csv", "w", newline="") as file:
-            fieldnames = dict_list[0].keys()
+            fieldnames = ["id", "title", "body"]
             writer = csv.DictWriter(file, fieldnames=fieldnames)
             writer.writeheader()
             writer.writerows(dict_list)
     else:
-        print("Failed to fetch posts, status code: ", code)
+        print(f"Failed to fetch posts, status code: {response.status_code}")
