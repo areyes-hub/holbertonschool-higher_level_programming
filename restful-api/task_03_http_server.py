@@ -8,7 +8,9 @@ import json
 
 
 class Server(http.server.BaseHTTPRequestHandler):
-    """simple server"""
+    """
+    simple server class
+    """
     def do_GET(self):
         if self.path == "/data":
             self.send_response(200, "OK")
