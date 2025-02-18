@@ -37,7 +37,9 @@ API built with http.server"}
             self.send_response(200, "OK")
             self.send_header("Content-type", "text/html")
             self.end_headers()
-            return "OK"
+            self.wfile.write(
+                "<html><body><p>OK\
+                </p></body></html>".encode("utf-8"))
         else:
             self.send_response(404, "Not Found")
             self.send_header("Content-type", "text/html")
