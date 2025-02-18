@@ -9,19 +9,7 @@ from flask import request
 app = Flask(__name__)
 
 
-def define_username(dic):
-    """
-    defines the user's username
-    """
-    for n, v in dic.items():
-        v["username"] = n
-        break
-
-
-user = {"jane": {"name": "Jane", "age": 28, "city": "Los Angeles"}, 
-        "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}
-}
-define_username(user)
+user = {}
 
 
 @app.route("/")
@@ -41,17 +29,14 @@ def status():
 
 @app.route("/users")
 def users():
-    names = []
-    for u in user:
-        names.append(u)
-    return names
+    return jsonify(list(user.keys()))
 
 
 @app.route("/users/<username>")
 def usernames(username):
     if username not in user:
-        return '{"error": "User not found"}'
-    return user[username]
+        return jsonify({"error": "User not found"}), 404
+    return jsonify(user[username])
 
 
 @app.route("/add_user", methods=["POST"])
@@ -73,4 +58,4 @@ def add_user():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
