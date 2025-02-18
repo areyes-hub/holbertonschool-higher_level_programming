@@ -9,7 +9,7 @@ import csv
 def fetch_and_print_posts():
     """fetches and prints all posts from JSONPlaceholder"""
     response = requests.get("https://jsonplaceholder.typicode.com/posts")
-    print(f"Status code: {response.status_code}")
+    print(f"Status Code: {response.status_code}")
     if response.status_code == 200:
         post_dict = response.json()
         for post in post_dict:
