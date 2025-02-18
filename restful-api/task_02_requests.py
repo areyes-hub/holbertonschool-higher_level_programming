@@ -2,7 +2,8 @@
 """
 API module
 """
-import requests, csv
+import requests
+import csv
 
 
 response = requests.get("https://jsonplaceholder.typicode.com/posts")
@@ -16,6 +17,7 @@ def fetch_and_print_posts():
     if code > 199 and code < 300:
         for t in post_dict:
             print(t["title"])
+
 
 def fetch_and_save_posts():
     """saves posts as in a csv file"""
