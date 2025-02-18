@@ -47,5 +47,4 @@ def run_server(port):
         httpd.serve_forever()
 
 
-if __name__ == "__main__":
-    run_server(8000)
+run_server(8000)
