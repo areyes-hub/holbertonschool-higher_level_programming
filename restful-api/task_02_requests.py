@@ -24,7 +24,7 @@ def fetch_and_save_posts():
     if response.status_code == 200:
         post_dict = response.json()
         dict_list = [
-            {"id": post["id"], "title": post["title"], "body": post["body"]} 
+            {"id": post["id"], "title": post["title"], "body": post["body"]}
             for post in post_dict
             ]
         with open("posts.csv", "w", newline="") as file:
