@@ -5,7 +5,6 @@ flask module
 from flask import Flask
 from flask import jsonify
 from flask import request
-from flask import abort
 
 app = Flask(__name__)
 
@@ -50,7 +49,7 @@ def add_user():
 
     username = data["username"]
     if username in user:
-        abort(400, {"error": "Username already exists"})
+        return jsonify({"error": "Username already exists"}), 400
 
     user[username] = {
         "username": username,
