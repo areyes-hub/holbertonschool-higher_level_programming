@@ -30,6 +30,11 @@ def verify_password(username, password):
     return None
 
 
+@auth.error_handler
+def basic_auth_error():
+    return jsonify({"error": "Missing or invalid credentials"}), 401
+
+
 @app.route("/")
 @auth.login_required
 def index():
