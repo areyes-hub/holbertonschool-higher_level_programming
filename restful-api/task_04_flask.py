@@ -48,10 +48,8 @@ def add_user():
         return jsonify({"error": "Missing required fields"}), 400
 
     username = data["username"]
-    usernames = set()
     if username in user:
         return jsonify({"error": "Username already exists"}), 400
-    usernames.add(username)
 
     user[username] = {
         "username": username,
