@@ -33,7 +33,7 @@ def verify_password(username, password):
 
 @auth.error_handler
 def basic_auth_error():
-    return jsonify({"error": "Missing or invalid credentials"}), 401
+    return "", 401
 
 
 @app.route("/")
@@ -45,7 +45,7 @@ def index():
 @app.route("/basic-protected", methods=["GET"])
 @auth.login_required
 def basic_protected():
-    return "Basic Auth: Access Granted", 201
+    return "Basic Auth: Access Granted", 200
 
 
 @app.route("/login", methods=["POST"])
