@@ -32,8 +32,8 @@ def verify_password(username, password):
 
 
 @auth.error_handler
-def basic_auth_error():
-    return "", 401
+def basic_auth_error(status):
+    return "Unauthorized", status
 
 
 @app.route("/")
