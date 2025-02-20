@@ -39,8 +39,8 @@ def verify_password(username, password):
 
 
 @auth.error_handler
-def auth_error(status):
-    return jsonify({"error": "Unauthorized"}), status
+def auth_error():
+    return jsonify({"error": "Unauthorized"}), 401
 
 
 @app.route("/basic-protected", methods=["GET"])
