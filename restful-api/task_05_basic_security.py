@@ -19,8 +19,14 @@ auth = HTTPBasicAuth()
 jwt = JWTManager(app)
 
 users = {
-    "user1": {"username": "user1", "password": generate_password_hash("password"), "role": "user"},
-    "admin1": {"username": "admin1", "password": generate_password_hash("password"), "role": "admin"}
+    "user1": {
+        "username": "user1",
+        "password": generate_password_hash("password"), "role": "user"
+        },
+    "admin1": {
+        "username": "admin1",
+        "password": generate_password_hash("password"), "role": "admin"
+        }
 }
 
 
@@ -50,7 +56,9 @@ def login():
     password = data.get("password")
     user = users.get(username)
     if user and check_password_hash(user["password"], password):
-        access_token = create_access_token(identity=username, additional_claims={"role": user["role"]})
+        access_token = create_access_token(
+            identity=username, additional_claims={"role": user["role"]}
+            )
         return jsonify(access_token=access_token)
     else:
         return jsonify({"error": "Invalid credentials"}), 401
