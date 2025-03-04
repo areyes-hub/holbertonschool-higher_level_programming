@@ -8,7 +8,7 @@ IF NOT EXISTS cities
     id INT NOT NULL AUTO_GENERATED,
     state_id INT NOT NULL,
     name VARCHAR
-(256) NOT NULL
+(256) NOT NULL,
     UNIQUE
 (id),
     PRIMARY KEY
