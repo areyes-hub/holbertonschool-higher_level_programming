@@ -29,7 +29,7 @@ def main():
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        print(f"({row[0]}, '{row[1]}')")
     cur.close()
     conn.close()
 
