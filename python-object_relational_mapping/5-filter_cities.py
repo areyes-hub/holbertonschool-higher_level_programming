@@ -30,14 +30,10 @@ def main():
                 LEFT JOIN states ON cities.state_id = states.id\
                 WHERE states.name = %s ORDER BY cities.id ASC", (state_name,))
     query_rows = cur.fetchall()
-    count = 0
-    for row in query_rows:
-        print(row[0], end="")
-        count += 1
-        if count == len(query_rows):
-            break
-        print(", ", end="")
-    print("")
+    if query_rows:
+        print(", ".join([row[0] for row in query_rows]))
+    else:
+        print("")
     cur.close()
     conn.close()
 
