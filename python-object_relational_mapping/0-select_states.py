@@ -6,6 +6,7 @@ import MySQLdb
 
 
 def main():
+    """main function that runs the module"""
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
