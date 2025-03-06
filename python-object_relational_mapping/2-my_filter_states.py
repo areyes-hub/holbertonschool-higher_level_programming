@@ -8,8 +8,8 @@ import sys
 
 def main():
     """
-    main function that runs the module"""
-
+    main function that runs the module
+    """
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     mysql_database = sys.argv[3]
@@ -25,7 +25,8 @@ def main():
         )
     cur = conn.cursor()
     cur.execute(
-        f"SELECT * FROM states WHERE name = '{state_name}' ORDER BY id ASC"
+        "SELECT * FROM states\
+            WHERE name = '{}' ORDER BY id ASC".format(state_name)
         )
     query_rows = cur.fetchall()
     for row in query_rows:
