@@ -10,9 +10,6 @@ def main():
     """
     main function that runs the module
     """
-    if len(sys.argv) < 4:
-        return
-
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     mysql_database = sys.argv[3]
