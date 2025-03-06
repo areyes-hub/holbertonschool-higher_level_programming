@@ -6,7 +6,9 @@ import MySQLdb
 
 
 def main():
-    """main function that runs the module"""
+    """
+    main function that runs the module
+    """
     conn = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -22,6 +24,7 @@ def main():
         print(row)
     cur.close()
     conn.close()
+
 
 if __name__ == "__main__":
     main()
