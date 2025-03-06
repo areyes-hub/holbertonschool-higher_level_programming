@@ -11,6 +11,9 @@ def main():
     """
     main function that runs the module
     """
+    if len(sys.argv) != 5:
+        print("Usage: ./5-filter_cities.py mysql_username mysql_password mysql_database state_name")
+        return
     mysql_username = sys.argv[1]
     mysql_password = sys.argv[2]
     mysql_database = sys.argv[3]
