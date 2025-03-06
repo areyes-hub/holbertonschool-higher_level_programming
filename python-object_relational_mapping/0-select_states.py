@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+This module lists all states of the state table
+"""
 import MySQLdb
 
 
