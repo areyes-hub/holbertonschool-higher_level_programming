@@ -24,7 +24,7 @@ def main():
         )
     cur = conn.cursor()
     cur.execute("SELECT * FROM states WHERE states.name\
-                LIKE 'N%' ORDER BY states.id ASC")
+                LIKE 'N%' OR states.name LIKE 'n%' ORDER BY states.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print("({}, '{}')".format(row[0], row[1]))
