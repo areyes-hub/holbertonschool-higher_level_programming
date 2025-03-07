@@ -22,9 +22,10 @@ def main():
         db=mysql_database,
         charset="utf8"
         )
+    letter_n = "N"
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name\
-                LIKE 'N%' ORDER BY states.id ASC")
+    cur.execute(f"SELECT * FROM states WHERE states.name\
+                LIKE '{letter_n.upper()}%' ORDER BY states.id ASC")
     query_rows = cur.fetchall()
     for row in query_rows:
         print("({}, '{}')".format(row[0], row[1]))
