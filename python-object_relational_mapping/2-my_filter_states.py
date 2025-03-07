@@ -30,7 +30,7 @@ def main():
         )
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(row)
+        print("{}: {}".format(row[0], row[1].capitalize()))
     cur.close()
     conn.close()
 
