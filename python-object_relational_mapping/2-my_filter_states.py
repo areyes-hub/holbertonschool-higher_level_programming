@@ -26,7 +26,7 @@ def main():
     cur = conn.cursor()
     cur.execute(
         "SELECT * FROM states\
-            WHERE name = '{}' ORDER BY id ASC".format(state_name)
+            WHERE BINARY name = '{}' ORDER BY id ASC".format(state_name)
         )
     query_rows = cur.fetchall()
     for row in query_rows:
