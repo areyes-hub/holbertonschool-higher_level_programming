@@ -4,6 +4,7 @@
         <title>Product Display</title>
     </head>
     <body>
+        {% include 'header.html' %}
         <h1>Product Display</h1>
         {% if error %}
             <p>{{ error }}</p>
@@ -30,5 +31,6 @@
                 {% endif %}
             </tbody>
         </table>
+        {% include 'footer.html' %}
     </body>
 </html>
