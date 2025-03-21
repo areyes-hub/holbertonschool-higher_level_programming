@@ -3,11 +3,6 @@ import csv
 
 app = Flask(__name__)
 
-def item_data():
-    with open("items.json") as items:
-        data = json.load(items)
-    return data
-
 
 def read_json():
     with open('products.json') as file:
