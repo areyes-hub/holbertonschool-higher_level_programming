@@ -8,7 +8,7 @@
        <h1>Items List</h1>
        <p>This is a list of items:</p>
     <ul>
-        {% if data['items'] %}
+        {% if data %}
             {% for item in data['items'] %}
                 <li>{{ item }}</li>
             {% endfor %}
