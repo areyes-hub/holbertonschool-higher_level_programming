@@ -59,7 +59,7 @@ def product_display():
     if source == 'json':
         products = read_json()
     elif source == 'csv':
-        products = read_csv
+        products = read_csv()
     
     if product_id:
         products = [product for product in products if product['id'] == product_id]
