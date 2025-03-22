@@ -49,8 +49,8 @@ def items():
     return render_template('items.html', data=data)
 
 
-@app.route('/product_display', methods=['GET'])
-def product_display():
+@app.route('/products', methods=['GET'])
+def products():
     source = request.args.get('source')
     product_id = request.args.get('id', type=int)
 
